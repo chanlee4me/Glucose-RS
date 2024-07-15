@@ -278,9 +278,9 @@ public:
 /*-----------------------addey by cl-----------------------*/
     int &hitFreq (Var var) { return htab[var]; } //返回变量出现频率
     vec<int> htab;  //变量出现频率表
-    // uint64_t solves,starts,decisions,propagations,conflicts,conflictsRestarts;
-    uint64_t solves,starts,decisions,propagations,conflictsRestarts;
-    static uint64_t conflicts;
+    uint64_t solves,starts,decisions,propagations,conflicts,conflictsRestarts;
+    // uint64_t solves,starts,decisions,propagations,conflictsRestarts;
+    // static uint64_t conflicts;
 /*----------------------- ----end--------------------------*/
 
 protected:
@@ -529,7 +529,7 @@ if(glue == 0)
     flag = 0;
 int64_t weight = 1.0 / glue;
 int64_t freq = hitFreq(v);
-int64_t sumConflicts = Solver::conflicts;
+int64_t sumConflicts = conflicts;
     if ( (activity[v] += inc + flag * 2 * weight * freq /  sumConflicts) > 1e100 ) {
 /*----------------------- ----end--------------------------*/
         // Rescale:

@@ -158,8 +158,8 @@ verbosity(0)
 , useUnaryWatched(false)
 , promoteOneWatchedClause(true)
 /*-----------------------addey by cl-----------------------*/
-// ,solves(0),starts(0),decisions(0),propagations(0),conflicts(0),conflictsRestarts(0)
-,solves(0),starts(0),decisions(0),propagations(0),conflictsRestarts(0)
+,solves(0),starts(0),decisions(0),propagations(0),conflicts(0),conflictsRestarts(0)
+// ,solves(0),starts(0),decisions(0),propagations(0),conflictsRestarts(0)
 /*----------------------- ----end--------------------------*/
 
 , curRestart(1)
