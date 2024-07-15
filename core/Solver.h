@@ -276,8 +276,7 @@ public:
 
     // Important stats completely related to search. Keep here
 /*-----------------------addey by cl-----------------------*/
-    //todo:初始化htab数据结构，使其和变量编号一一对应
-    int &hitFreq (Lit lit) { return htab[var(lit)]; } //返回变量出现频率
+    int &hitFreq (Var var) { return htab[var]; } //返回变量出现频率
     vec<int> htab;  //变量出现频率表
     // uint64_t solves,starts,decisions,propagations,conflicts,conflictsRestarts;
     uint64_t solves,starts,decisions,propagations,conflictsRestarts;
