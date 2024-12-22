@@ -524,13 +524,12 @@ inline void Solver::varBumpActivity(Var v) { varBumpActivity(v, var_inc); }
 inline void Solver::varBumpActivity(Var v, double inc) {
 /*-----------------------addey by cl-----------------------*/
     // if ( (activity[v] += inc) > 1e100 ) {
-int flag = 1;
-if(glue == 0)
-    flag = 0;
-int64_t weight = 1.0 / glue;
-int64_t freq = hitFreq(v);
-int64_t sumConflicts = conflicts;
-    if ( (activity[v] += inc + flag * 2 * weight * freq /  sumConflicts) > 1e100 ) {
+    int64_t weight = 0;
+    if(glue != 0)
+        int64_t weight = 1.0 / glue;
+    int64_t freq = hitFreq(v);
+    int64_t sumConflicts = conflicts;
+    if ( (activity[v] += inc + 2 * weight * freq /  sumConflicts) > 1e100 ) {
 /*----------------------- ----end--------------------------*/
         // Rescale:
         for (int i = 0; i < nVars(); i++)

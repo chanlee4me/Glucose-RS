@@ -179,9 +179,6 @@ int main(int argc, char** argv)
         // voluntarily:
         //signal(SIGINT, SIGINT_interrupt);
         //signal(SIGXCPU,SIGINT_interrupt);
-/*-----------------------addey by cl-----------------------*/
-        // uint64_t Solver::conflicts = 0;
-/*----------------------- ----end--------------------------*/
 
 	int ret2 = msolver.simplify();   
         msolver.use_simplification = pre; 	
